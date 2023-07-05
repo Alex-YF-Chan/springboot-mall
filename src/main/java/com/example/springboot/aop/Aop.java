@@ -18,13 +18,14 @@ public class Aop {
 //    Logger log = LogManager.getLogger(Aop.class);
     @Around("execution(* com.example.springboot.controller..*(..))")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
-        log.info("Around start");
+        String method = pjp.getSignature().toShortString();
+        log.info( method +" Around start");
         Date start = new Date();
         Object obj = pjp.proceed();
         Date end = new Date();
         long time = end.getTime() - start.getTime();
-        log.info("執行了: " + time +" ms");
-        log.info("Around end");
+        log.info(method +" 執行了: " + time +" ms");
+        log.info(method +" Around end");
         return obj;
     }
 }
