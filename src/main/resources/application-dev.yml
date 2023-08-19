@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: ${dburl:jdbc:mysql://localhost:3306/bccc?serverTimezone=Asia/Taipei}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: springMall
+    password: ENC(dCbOL/h+a888fTlbtoGnNE9caLQnLxDH0457yz5thnL6zxIVmvFo5RTBK3D4321b)
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+  jpa:
+    show-sql: true
