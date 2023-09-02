@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -13,12 +14,17 @@ import java.util.List;
 public class Customer {
     @Id
     @Column(name = "id", nullable = false)
+    @NotNull
     private String id;
+    @NotNull
     @Column(name="name")
     private String name;
+    @NotNull
     @Column(name="email")
+    @NotNull
     private String email;
     @Column(name="password")
+    @NotNull
     private String password;
 
     @OneToMany(cascade = CascadeType.PERSIST)
